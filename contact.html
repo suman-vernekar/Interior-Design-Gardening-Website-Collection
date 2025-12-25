@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursery Selector</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Select Nursery by City</h1>
+    <form id="nursery-form">
+      <label for="city">Select City:</label>
+      <select id="city" name="city">
+        <option value="" disabled selected>Select a city</option>
+        <option value="new-york">hassan</option>
+        <option value="los-angeles">mosalehosahalli</option>
+        <option value="chicago">holenarasipura</option>
+      </select>
+
+      <div id="nursery-options" class="hidden">
+        <label for="nursery">Select Nursery:</label>
+        <select id="nursery" name="nursery">
+          <option value="" disabled selected>Select a nursery</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script src="contact.js"></script>
+</body>
+</html>

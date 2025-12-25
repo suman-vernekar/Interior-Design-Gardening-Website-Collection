@@ -1,0 +1,342 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Container to Center the Content */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 15px 0;
+}
+
+/* Header Styling */
+header {
+    background-color: hsl(0, 0%, 100%);
+    color: #000000;
+    position: sticky;
+    top: 0;
+}
+
+/* Logo Styling */
+#logo{
+    width: 70px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50%;
+}
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Navigation Menu */
+#nav-menu {
+    display: flex;
+    gap: 200px;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 10px;
+}
+
+#nav-menu li {
+    margin: 10px;
+}
+
+#nav-menu a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 3px;
+}
+
+#nav-menu a:hover {
+    color: #ff9800;
+    border-bottom: #ff9800 2px solid;
+}
+
+/* Hamburger Menu (Hidden by Default on Large Screens) */
+.menu-toggle {
+    display: none;
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    /* Change the layout for mobile */
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Make the navigation vertical on small screens */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    #nav-menu li {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Hamburger Menu Button (Visible on Small Screens) */
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+
+/* Main Hero Section */
+#hero {
+    background: url('https://images.livspace-cdn.com/w:2880/plain/https://d3gq2merok8n5r.cloudfront.net/img/landingpages/full-home-interiors/Edge_New/new-folder-1657193933-8Jkh5/1440x730-1657194139-erPsT.jpg') no-repeat;
+   background-size: cover;
+    color: #fff;
+    padding: 100px 20px;
+    height: 90vh;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e67e00;
+}
+
+/* Services Section */
+#services {
+    padding: 60px 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+#services h2 {
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: calc(33.333% - 20px);
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 300px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.portfolio-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-gallery img {
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.portfolio-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 0;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    width: 100%;
+    background: #ff9800;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: #e67e00;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 1024px) {
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    .portfolio-gallery img {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #hero {
+        padding: 80px 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .portfolio-gallery img {
+        width: 100%;
+    }
+}
+
+/* Hamburger Menu & Navigation for Mobile */
+@media (max-width: 768px) {
+    /* Hide navigation on small screens */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    /* Show navigation when active */
+    #nav-menu.active {
+        display: flex;
+    }
+
+    /* Styling for the Hamburger Menu Button */
+    .menu-toggle {
+        display: block;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header a {
+        text-align: center;
+        font-size: 18px;
+    }
+}

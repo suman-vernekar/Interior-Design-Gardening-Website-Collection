@@ -1,0 +1,160 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+h2 {
+    color: #2e7d32;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+strong {
+    color: #4CAF50;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Button container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Action buttons */
+.action-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Sell Button Style */
+.sell-button {
+    background-color: #f44336;
+}
+
+.sell-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Buy Button Style */
+.buy-button {
+    background-color: #4CAF50;
+}
+
+.buy-button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    color: #333;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  input[type="text"], input[type="number"], input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+  }
+  button[type="submit"] {
+    background-color: #008CBA;
+  }
+  button[type="submit"]:hover {
+    background-color: #007B9E;
+  }
+  #plants ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  #plants li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #plants img {
+    max-width: 100px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }

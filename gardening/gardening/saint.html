@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grass Cost Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .total-cost {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kentucky Bluegrass Cost Calculator</h2>
+        
+        <!-- Input for area and cost calculation -->
+        <label for="area">Enter area (in square feet):</label>
+        <input type="number" id="area" placeholder="Enter area in sq ft" required>
+        <br>
+        <button onclick="calculateCost()">Calculate</button>
+
+        <h3>Total Cost: <span id="totalCost" class="total-cost">0</span> Rupees</h3>
+
+        <!-- Go Back Button -->
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        // Function to calculate the cost
+        function calculateCost() {
+            // Get the value of the area input
+            var area = document.getElementById("area").value;
+
+            // Validate the input
+            if (area <= 0 || isNaN(area)) {
+                alert("Please enter a valid area in square feet.");
+                return;
+            }
+
+            // Cost per square foot
+            var costPerSqFt =9;
+
+            // Calculate the total cost
+            var totalCost = area * costPerSqFt;
+
+            // Display the total cost
+            document.getElementById("totalCost").textContent = totalCost;
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
