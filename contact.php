@@ -1,1 +1,186 @@
 
+<?php
+// Enable error reporting for debugging (remove in production)
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contact_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$message = ""; // For displaying feedback to the user
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate form input
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $phone = htmlspecialchars(trim($_POST['phone']));
+    $message_input = htmlspecialchars(trim($_POST['message']));
+
+    if (!empty($name) && !empty($email) && !empty($phone) && !empty($message_input)) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Prepare the SQL query
+            $stmt = $conn->prepare("INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $name, $email, $phone, $message_input);
+
+            // Execute query and provide feedback
+            if ($stmt->execute()) {
+                $message = "Your message has been saved. Thank you for contacting us!";
+            } else {
+                $message = "Error saving your message. Please try again.";
+            }
+            $stmt->close();
+        } else {
+            $message = "Invalid email address. Please enter a valid email.";
+        }
+    } else {
+        $message = "All fields are required. Please fill out the form completely.";
+    }
+}
+
+// Close the database connection
+$conn->close();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content:space-around;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        section {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            margin-right:15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+        .out{
+            display:flex;
+            gap:20px;
+        }
+        .out a{
+            text-decoration:none;
+            color:white;
+            font-size: 20px;
+        }
+        .out a:hover{
+            color:yellow;
+            border-bottom:2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">Contact Us</div>
+    <div class="out">
+    <div class="home"><a href="interiordesign.html">HOME</a></div>
+    <div class="logout"><a href="index.php">LOG OUT</a></div>
+    </div>
+</header>
+
+<section>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <?php if (!empty($message)) : ?>
+            <p class="message"><?= htmlspecialchars($message); ?></p>
+        <?php endif; ?>
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Your Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>
