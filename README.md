@@ -18,7 +18,7 @@ This repository contains two web projects: an interior design website and a gard
 - 💬 Contact and estimation forms
 - 🎨 Modern UI with interactive elements
 
-**File Structure:**
+**File Structure:*
 - 📁 `interior/`: Main interior design website files
   - 📁 `interiordesign.html`: Main design page
   - 📁 `homepage.php`: PHP homepage with session management
