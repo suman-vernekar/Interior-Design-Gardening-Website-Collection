@@ -8,7 +8,7 @@ This repository contains two web projects: an interior design website and a gard
 
 🏠 An interior design website offering solutions for home design. The website provides various features such as design ideas, booking quotes, and information about interior design services.
 
-**Key Features:**
+**Key Features:*
 - ✨ Responsive design for optimal viewing on different devices
 - 🔗 Navigation bar with links to different sections
 - 🎯 Banner section with call-to-action for quotes
