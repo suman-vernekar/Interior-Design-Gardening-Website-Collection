@@ -5,7 +5,6 @@ This repository contains two web projects: an interior design website and a gard
 ## Projects Overview
 
 ### 1. Interior Design Website
-
 🏠 An interior design website offering solutions for home design. The website provides various features such as design ideas, booking quotes, and information about interior design services.
 
 **Key Features:**
