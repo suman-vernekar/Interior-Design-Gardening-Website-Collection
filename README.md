@@ -1,4 +1,4 @@
-# Mini Project - Interior Design & Gardening Website Collection
+# Mini Project - Interior Design & Gardening Website Collections
 
 This repository contains two web projects: an interior design website and a gardening website. Both are built using HTML, CSS, JavaScript, and PHP with MySQL database connectivity.
 
