@@ -19,7 +19,7 @@ This repository contains two web projects: an interior design website and a gard
 - 
 **File Structure:*
 - 📁 `interior/`: Main interior design website files
-  - 📁 `interiordesign.html`: Main design page
+  - 📁 `interiordesign.html`: Main design pages
   - 📁 `homepage.php`: PHP homepage with session management
   - 📁 `book.php`: Booking/quote page
   - 📁 `design.html`: Design ideas page
